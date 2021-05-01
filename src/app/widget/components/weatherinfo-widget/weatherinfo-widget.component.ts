@@ -17,7 +17,7 @@ export class WeatherinfoWidgetComponent implements OnInit {
   }
 
   handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
-    this.router.navigate([weatherDetails?.city], {relativeTo: this.route});
+    this.router.navigate([weatherDetails?.city], {relativeTo: this.route, state: {data: weatherDetails} });
     console.log(weatherDetails);
   }
 }
