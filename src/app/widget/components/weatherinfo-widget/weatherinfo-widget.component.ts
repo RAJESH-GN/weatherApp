@@ -1,23 +1,21 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ParsedWeatherCardDetails} from '../../models/parsedWeatherCardDetails';
 import {ActivatedRoute, Router} from '@angular/router';
+import {WeatherDetailsService} from '../../services/weather-details.service';
 
 @Component({
   selector: 'app-weatherinfo-widget',
   templateUrl: './weatherinfo-widget.component.html',
   styleUrls: ['./weatherinfo-widget.component.scss']
 })
-export class WeatherinfoWidgetComponent implements OnInit {
+export class WeatherinfoWidgetComponent {
   @Input() weatherDetails: ParsedWeatherCardDetails | undefined;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private weatherDetailsService: WeatherDetailsService) {
   }
 
-  ngOnInit(): void {
-  }
-
-  handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
-    this.router.navigate([weatherDetails?.city], {relativeTo: this.route, state: {data: weatherDetails} });
-    console.log(weatherDetails);
+  public handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
+    this.weatherDetailsService.selectedCityLocation.next(weatherDetails?.coord);
+    this.router.navigate([weatherDetails?.city], {relativeTo: this.route});
   }
 }

@@ -1,20 +1,18 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {ActivatedRoute} from '@angular/router';
-import {Observable, of} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Observable, of, Subscription} from 'rxjs';
 import {WeatherApiResponse} from '../../models/weatherApiResponse';
 import {WeatherDetailsService} from '../../services/weather-details.service';
 import {ParsedWeatherCardDetails} from '../../models/parsedWeatherCardDetails';
-import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-weatherinfo-widget-list',
   templateUrl: './weatherinfo-widget-list.component.html',
   styleUrls: ['./weatherinfo-widget-list.component.scss']
 })
-export class WeatherinfoWidgetListComponent implements OnInit {
-  cities: Observable<string[]>;
-  parsedWeatherDetails: ParsedWeatherCardDetails[];
+export class WeatherinfoWidgetListComponent implements OnInit, OnDestroy {
+  private cities: Observable<string[]>;
+  public parsedWeatherDetails: ParsedWeatherCardDetails[];
+  private citiesSubscription: Subscription | undefined;
 
   constructor(private weatherDetailsService: WeatherDetailsService) {
     this.cities = of(['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Copenhagen']);
@@ -22,13 +20,18 @@ export class WeatherinfoWidgetListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cities.subscribe(cities => {
+    this.citiesSubscription = this.cities.subscribe(cities => {
       cities.map((city) => {
         this.weatherDetailsService.getWeatherInfoWithCity(city).subscribe((response: WeatherApiResponse) => {
           this.parseWeatherDetails(response);
         });
       });
     });
+    this.weatherDetailsService.selectedCityLocation.subscribe(res => console.log(res));
+  }
+
+  ngOnDestroy(): void {
+    this.citiesSubscription?.unsubscribe();
   }
 
   private parseWeatherDetails(response: WeatherApiResponse): void {

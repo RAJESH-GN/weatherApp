@@ -1,6 +1,6 @@
 <mat-card class="weather-card" (click)="handleClickEvent(weatherDetails)">
   <div class="weather-card__temperature-details">
-    <h2>{{weatherDetails?.city}},{{weatherDetails?.country}} Weather</h2>
+    <h2>{{weatherDetails?.city}},{{weatherDetails?.country}}</h2>
     <p> As of {{weatherDetails?.date | timeWithDate}}</p>
     <p class="temperature">{{weatherDetails?.main?.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
     <h2>{{weatherDetails?.type}}</h2>

@@ -5,11 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class MeasurementTypePipe implements PipeTransform {
 
-  transform(value: unknown, args: string): string {
-    if (value){
-      return value + ' ' + args;
-    }
-    return '';
+  transform(value: number| undefined, args: string): string {
+    console.log(value);
+    return value ? value + ' ' + args : '';
   }
 
 }
