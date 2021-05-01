@@ -1,17 +1,20 @@
 import {NgModule} from '@angular/core';
 import {TemperaturePipe} from './temperature.pipe';
 import { TimeWithDatePipe } from './time-with-date.pipe';
+import { MeasurementTypePipe } from './measurement-type.pipe';
 
 
 @NgModule({
   declarations: [
     TemperaturePipe,
-    TimeWithDatePipe
+    TimeWithDatePipe,
+    MeasurementTypePipe
   ],
-  exports: [
-    TemperaturePipe,
-    TimeWithDatePipe
-  ],
+    exports: [
+        TemperaturePipe,
+        TimeWithDatePipe,
+        MeasurementTypePipe
+    ],
   imports: [
   ]
 })

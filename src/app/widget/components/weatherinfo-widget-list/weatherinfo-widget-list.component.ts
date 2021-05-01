@@ -33,17 +33,13 @@ export class WeatherinfoWidgetListComponent implements OnInit {
 
   private parseWeatherDetails(response: WeatherApiResponse): void {
     const temperatureDetails = {...response.main};
-    // TODO: Make a pipe available for this Date in HTML
-    /*const dateToMilliSecond = response.dt * 1000;
-    let date = new Date(dateToMilliSecond);*/
-    // TODO: to create a pipe for timezone
-    // console.log(date.getHours(), date.getMinutes(), date.getSeconds(), date.getTimezoneOffset());
     const parsedDetails: ParsedWeatherCardDetails = {
       date: response.dt,
       main: temperatureDetails,
       city: response.name,
       country: response.sys.country,
-      type: response.weather[0].main
+      type: response.weather[0].main,
+      windSpeed: response.wind.speed
     };
     this.parsedWeatherDetails.push(parsedDetails);
   }

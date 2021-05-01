@@ -6,4 +6,5 @@ export interface ParsedWeatherCardDetails {
   city: string;
   country: string;
   type: string;
+  windSpeed: number;
 }

@@ -4,6 +4,7 @@
     <p> As of {{weatherDetails?.date | timeWithDate}}</p>
     <p class="temperature">{{weatherDetails?.main?.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
     <h2>{{weatherDetails?.type}}</h2>
+    <span class="wind-info"><i class="fas fa-2x fa-wind"></i> <span class="wind-info__speed">{{weatherDetails?.windSpeed | measurementType: 'm/s'}}</span></span>
   </div>
   <div class="weather-card__max-min-temperature">
     <i class="fas fa-5x fa-cloud-rain"></i>
