@@ -1,13 +1,14 @@
-<mat-card class="weather-card">
+<mat-card class="weather-card" (click)="handleClickEvent(weatherDetails)">
   <div class="weather-card__temperature-details">
-    <p>PlaceName</p>
-    <p>time as on</p>
-    <p>Temperature</p>
-    <p>Temperature Type</p>
+    <h2>{{weatherDetails?.city}},{{weatherDetails?.country}} Weather</h2>
+    <p> As of {{weatherDetails?.date | timeWithDate}}</p>
+    <p class="temperature">{{weatherDetails?.main?.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
+    <h2>{{weatherDetails?.type}}</h2>
   </div>
   <div class="weather-card__max-min-temperature">
-    <i class="fas fa-3x fa-cloud-rain"></i>
-    <p>max/min temperature</p>
+    <i class="fas fa-5x fa-cloud-rain"></i>
+    <p>{{weatherDetails?.main?.temp_max | number: '1.0-0' | temperature: 'Celsius'}}
+      / {{weatherDetails?.main?.temp_min | number: '1.0-0'| temperature: 'Celsius'}}</p>
   </div>
 </mat-card>
 

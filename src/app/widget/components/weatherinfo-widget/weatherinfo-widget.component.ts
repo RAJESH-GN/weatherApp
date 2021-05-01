@@ -1,6 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {WeatherDetailsService} from '../../services/weather-details.service';
 import {WeatherApiResponse} from '../../models/weatherApiResponse';
+import {ParsedWeatherCardDetails} from '../../models/parsedWeatherCardDetails';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-weatherinfo-widget',
@@ -8,27 +10,15 @@ import {WeatherApiResponse} from '../../models/weatherApiResponse';
   styleUrls: ['./weatherinfo-widget.component.scss']
 })
 export class WeatherinfoWidgetComponent implements OnInit {
-  @Input() city: string | undefined;
-  parsedWeatherDetails: any = {};
-  weatherDetails: WeatherApiResponse | undefined;
-  tempInCelcius: number | undefined;
+  @Input() weatherDetails: ParsedWeatherCardDetails | undefined;
 
-  constructor(private weatherDetailsService: WeatherDetailsService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    if (this.city) {
-      this.weatherDetailsService.getWeatherInfoWithCity(this.city).subscribe((response: WeatherApiResponse) => {
-        this.parseWeatherDetails(response);
-      });
-    }
   }
 
-  private parseWeatherDetails(response: WeatherApiResponse): void {
-    const temperatureDetails = {...response.main};
-    const dateToMilliSecond = response.dt * 1000;
-    let date = new Date(dateToMilliSecond);
-    console.log(date);
-
+  handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
+    console.log(weatherDetails);
   }
 }

@@ -1,3 +1,5 @@
-<div class="" *ngFor="let city of cities | async">
-  <app-weatherinfo-widget [city]="city"></app-weatherinfo-widget>
+<div>
+  <ng-container *ngFor="let weatherDetails of parsedWeatherDetails">
+    <app-weatherinfo-widget [weatherDetails]="weatherDetails"></app-weatherinfo-widget>
+  </ng-container>
 </div>

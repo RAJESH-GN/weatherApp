@@ -9,6 +9,6 @@ export class WeatherDetailsService {
   constructor(private http: HttpClient) { }
 
   getWeatherInfoWithCity(name: string): Observable<WeatherApiResponse>{
-    return this.http.get<WeatherApiResponse>('http://api.openweathermap.org/data/2.5/weather?q=amsterdam&units=metric&appid=49278b4a9734f04bead1f100c5ed9fab');
+    return this.http.get<WeatherApiResponse>(`http://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=49278b4a9734f04bead1f100c5ed9fab`);
   }
 }

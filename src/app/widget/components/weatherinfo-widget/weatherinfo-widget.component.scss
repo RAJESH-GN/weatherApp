@@ -1,12 +1,26 @@
-.weather-card{
+.weather-card {
   display: flex;
   justify-content: space-between;
   margin: 1rem auto;
-  width: 70%;
+  max-width: 40%;
   color: white;
-  font-size: 1rem;
-  background: linear-gradient(to right,#e66465, #9198e5);
-  &__max-min-temperature{
+  font-size: 1.4rem;
+  background: linear-gradient(to right, #e66465, #9198e5);
+
+  &__temperature-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .temperature {
+      font-size: 5rem;
+      flex-grow: 1;
+      margin: 1.5rem 0px;
+    }
+  }
+
+  &__max-min-temperature {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
