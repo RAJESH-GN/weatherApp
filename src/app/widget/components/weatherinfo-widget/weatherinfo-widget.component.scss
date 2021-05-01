@@ -1,0 +1,15 @@
+.weather-card{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+  width: 70%;
+  color: white;
+  font-size: 1rem;
+  background: linear-gradient(to right,#e66465, #9198e5);
+  &__max-min-temperature{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
