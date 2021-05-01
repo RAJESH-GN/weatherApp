@@ -7,4 +7,10 @@ export interface ParsedWeatherCardDetails {
   country: string;
   type: string;
   windSpeed: number;
+  coord: Location;
+}
+
+export interface Location{
+  lat: number;
+  lon: number;
 }

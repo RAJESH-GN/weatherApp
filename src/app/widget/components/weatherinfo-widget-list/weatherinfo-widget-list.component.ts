@@ -39,7 +39,8 @@ export class WeatherinfoWidgetListComponent implements OnInit {
       city: response.name,
       country: response.sys.country,
       type: response.weather[0].main,
-      windSpeed: response.wind.speed
+      windSpeed: response.wind.speed,
+      coord: response.coord
     };
     this.parsedWeatherDetails.push(parsedDetails);
   }

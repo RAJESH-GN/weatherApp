@@ -1,8 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WeatherDetailsService} from '../../services/weather-details.service';
-import {WeatherApiResponse} from '../../models/weatherApiResponse';
 import {ParsedWeatherCardDetails} from '../../models/parsedWeatherCardDetails';
-import {Observable, of} from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-weatherinfo-widget',
@@ -12,13 +10,14 @@ import {Observable, of} from 'rxjs';
 export class WeatherinfoWidgetComponent implements OnInit {
   @Input() weatherDetails: ParsedWeatherCardDetails | undefined;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
   }
 
   handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
+    this.router.navigate([weatherDetails?.city], {relativeTo: this.route});
     console.log(weatherDetails);
   }
 }

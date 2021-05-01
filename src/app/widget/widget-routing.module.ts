@@ -4,7 +4,7 @@ import {WeatherinfoWidgetListComponent} from './components/weatherinfo-widget-li
 import {WeatherinfoDetailsComponent} from './components/weatherinfo-details/weatherinfo-details.component';
 
 const routes: Routes = [
-  {path: ':id', component: WeatherinfoDetailsComponent, pathMatch: 'full'},
+  {path: ':name', component: WeatherinfoDetailsComponent, pathMatch: 'full'},
   {path: '', component: WeatherinfoWidgetListComponent}
 ];
 
