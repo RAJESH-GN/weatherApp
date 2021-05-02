@@ -1,8 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {WeatherDetailsService} from '../../services/weather-details.service';
 import {Coord} from '../../models/weatherApiResponse';
 import {Subscription} from 'rxjs';
+import {Hourly} from '../../models/weatherHourlyResponse';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-weatherinfo-details',
@@ -11,15 +13,24 @@ import {Subscription} from 'rxjs';
 })
 export class WeatherinfoDetailsComponent implements OnInit, OnDestroy {
   private selectedCitySubscription: Subscription | undefined;
+  public hourlyWeather: Hourly[] | undefined;
+
   constructor(private weatherDetailsService: WeatherDetailsService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.selectedCitySubscription = this.weatherDetailsService.selectedCityLocation.subscribe((coord: Coord | undefined) => {
-      if (coord){
-        this.weatherDetailsService.getHourlyInfoOfCity(coord.lat, coord.lon).subscribe(res => console.log(res));
+        if (coord) {
+          this.weatherDetailsService.getHourlyInfoOfCity(coord.lat, coord.lon)
+            .pipe(map(weatherHourlyResponse => {
+              const hourly = [...weatherHourlyResponse.hourly];
+              return hourly.filter(hourDate => !(new Date(hourDate.dt * 1000).getDate() > new Date().getDate()));
+            }))
+            .subscribe(filteredHourlyRes => this.hourlyWeather = filteredHourlyRes);
+
+        }
       }
-    });
+    );
   }
 
   ngOnDestroy(): void {

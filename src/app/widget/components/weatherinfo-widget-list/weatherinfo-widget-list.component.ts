@@ -15,7 +15,7 @@ export class WeatherinfoWidgetListComponent implements OnInit, OnDestroy {
   private citiesSubscription: Subscription | undefined;
 
   constructor(private weatherDetailsService: WeatherDetailsService) {
-    this.cities = of(['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Copenhagen']);
+    this.cities = of(['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Spain']);
     this.parsedWeatherDetails = [];
   }
 
@@ -43,7 +43,11 @@ export class WeatherinfoWidgetListComponent implements OnInit, OnDestroy {
       country: response.sys.country,
       type: response.weather[0].main,
       windSpeed: response.wind.speed,
-      coord: response.coord
+      coord: response.coord,
+      feelsLike: temperatureDetails.feels_like,
+      pressure: temperatureDetails.pressure,
+      clouds: response.clouds.all,
+      humidity: temperatureDetails.humidity
     };
     this.parsedWeatherDetails.push(parsedDetails);
   }

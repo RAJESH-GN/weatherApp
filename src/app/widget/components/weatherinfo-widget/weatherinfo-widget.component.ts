@@ -16,6 +16,5 @@ export class WeatherinfoWidgetComponent {
 
   public handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
     this.weatherDetailsService.selectedCityLocation.next(weatherDetails?.coord);
-    this.router.navigate([weatherDetails?.city], {relativeTo: this.route});
   }
 }

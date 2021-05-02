@@ -1,37 +1,55 @@
 .weather-card {
-  display: flex;
-  justify-content: space-between;
+  width: 50%;
   margin: 1rem auto;
-  max-width: 40%;
-  color: white;
-  font-size: 1.4rem;
-  background: linear-gradient(to right, #e66465, #9198e5);
-
-  &__temperature-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    .temperature {
-      font-size: 5rem;
-      flex-grow: 1;
-      margin: 1.5rem 0;
-    }
-    .wind-info{
-      display: flex;
-      align-items: center;
+  background-color: rgba(66, 66, 66, 0.74);
+  font-size: inherit;
+  @media screen and (max-width: 60rem){
+    width: 100%;
+  }
+  &__header {
+    height: 20rem;
+    font-size: inherit;
+    .title {
+      flex-direction: column;
       justify-content: center;
-      &__speed{
-        margin: 0 1rem;
+      color: #EEE;
+      flex-basis: 15rem;
+
+      .temperature-details {
+        &__actual-temperature {
+          font-size: 5rem;
+          flex-grow: 1;
+          margin: 1.5rem 0;
+
+        }
+
+        .wind-info {
+          display: flex;
+          align-items: center;
+
+          &__speed {
+            margin: 0 1rem;
+          }
+        }
       }
     }
-  }
 
-  &__max-min-temperature {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    .description {
+      justify-content: space-between;
+      color: #EEE;
+      align-items: center;
+      font-size: 1.8rem;
+
+      .avg-temperature {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.6rem;
+        p{
+          padding: 1rem 0;
+        }
+      }
+    }
   }
 }

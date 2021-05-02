@@ -8,6 +8,10 @@ export interface ParsedWeatherCardDetails {
   type: string;
   windSpeed: number;
   coord: Location;
+  feelsLike: number;
+  pressure: number;
+  clouds: number;
+  humidity: number;
 }
 
 export interface Location{

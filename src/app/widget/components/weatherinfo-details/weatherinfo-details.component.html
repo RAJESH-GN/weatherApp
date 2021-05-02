@@ -1,1 +1,5 @@
-<p>weatherinfo-details works!</p>
+<div class="weather-hourly-details" *ngFor="let hourWeather of hourlyWeather">
+  <span>{{hourWeather.dt | timeWithDate}}</span>
+  <span>{{hourWeather.temp | temperature}}</span>
+  <span>{{hourWeather.wind_speed | measurementType: 'm/s'}}</span>
+</div>

@@ -18,7 +18,7 @@ export class WeatherDetailsService {
   }
 
   public getHourlyInfoOfCity(lat: number, lon: number): Observable<WeatherHourlyResponse> {
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=daily,current,minutely,alerts&appid=49278b4a9734f04bead1f100c5ed9fab`;
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts&appid=49278b4a9734f04bead1f100c5ed9fab`;
     return this.http.get<WeatherHourlyResponse>(url);
   }
 }

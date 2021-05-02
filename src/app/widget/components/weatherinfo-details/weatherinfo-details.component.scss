@@ -1,0 +1,19 @@
+/*
+mat-expansion-panel{
+  background-color: rgba(66, 66, 66, 0.74);
+  mat-panel-title, mat-panel-description{
+    color: white;
+    font-size: 1.4rem;
+  }
+  mat-panel-description{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+*/
+.weather-hourly-details{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  color: white;
+}
