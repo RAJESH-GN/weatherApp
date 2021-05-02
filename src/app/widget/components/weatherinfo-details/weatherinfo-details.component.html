@@ -3,7 +3,7 @@
   *ngFor="let hourWeather of hourlyWeather | async"
 >
   <p class="weather-hourly__time">
-    {{ hourWeather.dt * 1000 | date: 'HH:mm a' }}
+    {{ hourWeather.dt * 1000 | date: 'HH:mm a, dd-MMM' }}
   </p>
   <p class="weather-hourly__temperature">
     {{ hourWeather.temp | temperature }}

@@ -3,6 +3,7 @@
     hideToggle
     class="weather-card"
     [id]="index"
+    [expanded]="step === index"
     *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let index = index"
     (opened)="setStep(index)"
   >
@@ -22,7 +23,7 @@
           </p>
           <h2>{{ parsedWeatherDetail.weather[0].main }}</h2>
           <span class="wind-info"
-            ><i class="fas fa-1x fa-wind"></i>
+            ><mat-icon>air</mat-icon>
             <span class="wind-info__speed"
               >{{ parsedWeatherDetail.wind.speed }} m/s</span
             ></span
@@ -48,6 +49,7 @@
           <app-weather-icon
             [iconName]="parsedWeatherDetail.weather[0].icon"
             [iconSize]="4"
+            imageSize="large"
           ></app-weather-icon>
           <p>
             {{
