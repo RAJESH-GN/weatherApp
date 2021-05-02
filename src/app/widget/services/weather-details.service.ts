@@ -1,24 +1,21 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {Coord, WeatherApiResponse} from '../models/weatherApiResponse';
+import {CityName, Coord, WeatherApiResponse} from '../models/weatherApiResponse';
 import {HttpClient} from '@angular/common/http';
 import {WeatherHourlyResponse} from '../models/weatherHourlyResponse';
+import {environment} from '../../../environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class WeatherDetailsService {
-  public selectedCityLocation = new BehaviorSubject<Coord | undefined>(undefined);
+
   constructor(private http: HttpClient) {
   }
 
-  public getWeatherInfoWithCity(name: string): Observable<WeatherApiResponse> {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=49278b4a9734f04bead1f100c5ed9fab`;
-    return this.http.get<WeatherApiResponse>(url);
+  public getWeatherInfoWithCity(city: CityName): Observable<WeatherApiResponse> {
+    return this.http.get<WeatherApiResponse>(`${environment.weather_api_base_url}weather?q=${city}&units=metric&appid=${environment.api_key}`);
   }
 
   public getHourlyInfoOfCity(lat: number, lon: number): Observable<WeatherHourlyResponse> {
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts&appid=49278b4a9734f04bead1f100c5ed9fab`;
-    return this.http.get<WeatherHourlyResponse>(url);
+    return this.http.get<WeatherHourlyResponse>(`${environment.weather_api_base_url}onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts&appid=${environment.api_key}`);
   }
 }

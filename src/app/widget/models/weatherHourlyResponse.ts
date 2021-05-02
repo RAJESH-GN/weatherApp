@@ -1,10 +1,4 @@
-
-export interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
+import {Weather} from './weatherApiResponse';
 
 export interface Hourly {
   dt: number;

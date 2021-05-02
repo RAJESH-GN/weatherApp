@@ -8,7 +8,6 @@ import {WeatherDetailsService} from './services/weather-details.service';
 import {MaterialModule} from '../material/material.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {SharedModule} from '../shared/shared.module';
-import {TimeWithDatePipe} from '../shared/time-with-date.pipe';
 
 
 @NgModule({

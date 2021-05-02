@@ -1,43 +1,27 @@
-<!--<mat-card class="weather-card" (click)="handleClickEvent(weatherDetails)">
-  <div class="weather-card__temperature-details">
-    <h2>{{weatherDetails.city}},{{weatherDetails.country}}</h2>
-    <p> As of {{weatherDetails.date | timeWithDate}}</p>
-    <p class="temperature">{{weatherDetails.main.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
-    <h2>{{weatherDetails.type}}</h2>
-    <span class="wind-info"><i class="fas fa-2x fa-wind"></i> <span class="wind-info__speed">{{weatherDetails.windSpeed | measurementType: 'm/s'}}</span></span>
-  </div>
-  <div class="weather-card__max-min-temperature">
-    <i class="fas fa-5x fa-cloud-rain"></i>
-    <p>{{weatherDetails.main.temp_max | number: '1.0-0' | temperature: 'Celsius'}}
-      / {{weatherDetails.main.temp_min | number: '1.0-0'| temperature: 'Celsius'}}</p>
-  </div>
-</mat-card>-->
-
 <mat-accordion *ngIf="parsedWeatherDetails">
   <mat-expansion-panel hideToggle class="weather-card" [id]="i"
                        *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;"
-                       [expanded]="step === i"
-                       (opened)="handleClickEvent(parsedWeatherDetail); setStep(i)">
+                       (opened)="setStep(i)">
     <mat-expansion-panel-header class="weather-card__header">
       <mat-panel-title class="title">
-        <h2>{{parsedWeatherDetail.city}},{{parsedWeatherDetail.country}}</h2>
+        <h2>{{parsedWeatherDetail.name}},{{parsedWeatherDetail.sys.country}}</h2>
         <div class="temperature-details">
-          <p> As of {{parsedWeatherDetail.date | timeWithDate}}</p>
+          <p> As of {{parsedWeatherDetail.dt*1000 | date:'HH:mm a'}}</p>
           <p
             class="temperature-details__actual-temperature">{{parsedWeatherDetail.main.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
-          <h2>{{parsedWeatherDetail.type}}</h2>
+          <h2>{{parsedWeatherDetail.weather[0].main}}</h2>
           <span class="wind-info"><i class="fas fa-1x fa-wind"></i> <span
-            class="wind-info__speed">{{parsedWeatherDetail.windSpeed | measurementType: 'm/s'}}</span></span>
+            class="wind-info__speed">{{parsedWeatherDetail.wind.speed}} m/s</span></span>
         </div>
       </mat-panel-title>
       <mat-panel-description class="description">
         <div class="additional-info">
-          <p>Feels Like : <span>{{parsedWeatherDetail.feelsLike | temperature: 'celsius'}}</span></p>
-          <p>Pressure: <span>{{parsedWeatherDetail.pressure | measurementType: 'hpa'}}</span></p>
-          <p>Clouds: <span>{{parsedWeatherDetail.clouds}} %</span></p>
+          <p>Feels Like : <span>{{parsedWeatherDetail.main.feels_like | temperature: 'celsius'}}</span></p>
+          <p>Pressure: <span>{{parsedWeatherDetail.main.pressure}} hpa</span></p>
+          <p>Clouds: <span>{{parsedWeatherDetail.clouds.all}} %</span></p>
         </div>
         <div class="avg-temperature">
-          <i [class]="parsedWeatherDetail.type| cloudType"></i>
+          <app-weather-icon [iconName]="parsedWeatherDetail.weather[0].icon" [iconSize]="4"></app-weather-icon>
           <p>{{parsedWeatherDetail.main.temp_max | number: '1.0-0' | temperature: 'Celsius'}}
             / {{parsedWeatherDetail.main.temp_min | number: '1.0-0'| temperature: 'Celsius'}}</p>
         </div>
@@ -45,7 +29,7 @@
     </mat-expansion-panel-header>
     <ng-template matExpansionPanelContent>
       <div class="hourly-details-container">
-        <app-weatherinfo-details></app-weatherinfo-details>
+        <app-weatherinfo-details [coord]="parsedWeatherDetail.coord"></app-weatherinfo-details>
       </div>
     </ng-template>
     <mat-action-row>

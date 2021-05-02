@@ -1,7 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ParsedWeatherCardDetails} from '../../models/parsedWeatherCardDetails';
-import {ActivatedRoute, Router} from '@angular/router';
-import {WeatherDetailsService} from '../../services/weather-details.service';
+import {Component, Input} from '@angular/core';
+import {WeatherApiResponse} from '../../models/weatherApiResponse';
 
 @Component({
   selector: 'app-weatherinfo-widget',
@@ -9,12 +7,8 @@ import {WeatherDetailsService} from '../../services/weather-details.service';
   styleUrls: ['./weatherinfo-widget.component.scss']
 })
 export class WeatherinfoWidgetComponent {
-  @Input() parsedWeatherDetails: Array<ParsedWeatherCardDetails> = [];
-  public showHourlyDetails = false;
+  @Input() parsedWeatherDetails: WeatherApiResponse[];
   step = 0;
-
-  constructor(private router: Router, private route: ActivatedRoute, private weatherDetailsService: WeatherDetailsService) {
-  }
 
   setStep(index: number): void {
     this.step = index;
@@ -22,10 +16,5 @@ export class WeatherinfoWidgetComponent {
 
   nextStep(): void {
     this.step++;
-  }
-
-  public handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
-    this.showHourlyDetails = true;
-    this.weatherDetailsService.selectedCityLocation.next(weatherDetails?.coord);
   }
 }

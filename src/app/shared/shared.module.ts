@@ -1,24 +1,16 @@
 import {NgModule} from '@angular/core';
 import {TemperaturePipe} from './temperature.pipe';
-import { TimeWithDatePipe } from './time-with-date.pipe';
-import { MeasurementTypePipe } from './measurement-type.pipe';
-import { CloudTypePipe } from './cloud-type.pipe';
+import {WeatherIconComponent} from './components/weather-icon/weather-icon.component';
 
+const components = [TemperaturePipe,
+  WeatherIconComponent];
 
 @NgModule({
   declarations: [
-    TemperaturePipe,
-    TimeWithDatePipe,
-    MeasurementTypePipe,
-    CloudTypePipe
+    components
   ],
-    exports: [
-        TemperaturePipe,
-        TimeWithDatePipe,
-        MeasurementTypePipe,
-        CloudTypePipe
-    ],
-  imports: [
+  exports: [
+    ...components
   ]
 })
 export class SharedModule {
