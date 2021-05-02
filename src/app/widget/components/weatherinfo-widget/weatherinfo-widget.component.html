@@ -13,28 +13,28 @@
   </div>
 </mat-card>-->
 
-<mat-accordion *ngIf="weatherDetails">
-  <mat-expansion-panel hideToggle class="weather-card" (opened)="handleClickEvent(weatherDetails)">
+<mat-accordion *ngIf="parsedWeatherDetails" multi>
+  <mat-expansion-panel hideToggle class="weather-card" *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;" (opened)="handleClickEvent(parsedWeatherDetail)">
     <mat-expansion-panel-header class="weather-card__header">
       <mat-panel-title class="title">
-        <h2>{{weatherDetails.city}},{{weatherDetails.country}}</h2>
+        <h2>{{parsedWeatherDetail.city}},{{parsedWeatherDetail.country}}</h2>
         <div class="temperature-details">
-          <p> As of {{weatherDetails.date | timeWithDate}}</p>
-          <p class="temperature-details__actual-temperature">{{weatherDetails.main.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
-          <h2>{{weatherDetails.type}}</h2>
-          <span class="wind-info"><i class="fas fa-2x fa-wind"></i> <span class="wind-info__speed">{{weatherDetails.windSpeed | measurementType: 'm/s'}}</span></span>
+          <p> As of {{parsedWeatherDetail.date | timeWithDate}}</p>
+          <p class="temperature-details__actual-temperature">{{parsedWeatherDetail.main.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
+          <h2>{{parsedWeatherDetail.type}}</h2>
+          <span class="wind-info"><i class="fas fa-1x fa-wind"></i> <span class="wind-info__speed">{{parsedWeatherDetail.windSpeed | measurementType: 'm/s'}}</span></span>
         </div>
       </mat-panel-title>
       <mat-panel-description class="description">
         <div class="additional-info">
-          <p>Feels Like : <span>{{weatherDetails.feelsLike | temperature: 'celsius'}}</span></p>
-          <p>Pressure: <span>{{weatherDetails.pressure | measurementType: 'hpa'}}</span></p>
-          <p>Clouds: <span>{{weatherDetails.clouds}} %</span></p>
+          <p>Feels Like : <span>{{parsedWeatherDetail.feelsLike | temperature: 'celsius'}}</span></p>
+          <p>Pressure: <span>{{parsedWeatherDetail.pressure | measurementType: 'hpa'}}</span></p>
+          <p>Clouds: <span>{{parsedWeatherDetail.clouds}} %</span></p>
         </div>
         <div class="avg-temperature">
-          <i class="fas fa-5x fa-cloud-rain"></i>
-          <p>{{weatherDetails.main.temp_max | number: '1.0-0' | temperature: 'Celsius'}}
-            / {{weatherDetails.main.temp_min | number: '1.0-0'| temperature: 'Celsius'}}</p>
+          <i [class]="parsedWeatherDetail.type| cloudType"></i>
+          <p>{{parsedWeatherDetail.main.temp_max | number: '1.0-0' | temperature: 'Celsius'}}
+            / {{parsedWeatherDetail.main.temp_min | number: '1.0-0'| temperature: 'Celsius'}}</p>
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>

@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MeasurementTypePipe implements PipeTransform {
 
   transform(value: number| undefined, args: string): string {
-    console.log(value);
     return value ? value + ' ' + args : '';
   }
 

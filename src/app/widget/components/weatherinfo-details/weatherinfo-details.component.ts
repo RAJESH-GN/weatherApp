@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {WeatherDetailsService} from '../../services/weather-details.service';
 import {Coord} from '../../models/weatherApiResponse';
@@ -14,7 +14,6 @@ import {map} from 'rxjs/operators';
 export class WeatherinfoDetailsComponent implements OnInit, OnDestroy {
   private selectedCitySubscription: Subscription | undefined;
   public hourlyWeather: Hourly[] | undefined;
-
   constructor(private weatherDetailsService: WeatherDetailsService, private route: ActivatedRoute) {
   }
 

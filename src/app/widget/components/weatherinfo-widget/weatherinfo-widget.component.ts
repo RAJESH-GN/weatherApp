@@ -9,12 +9,13 @@ import {WeatherDetailsService} from '../../services/weather-details.service';
   styleUrls: ['./weatherinfo-widget.component.scss']
 })
 export class WeatherinfoWidgetComponent {
-  @Input() weatherDetails: ParsedWeatherCardDetails | undefined;
+  @Input() parsedWeatherDetails: Array<ParsedWeatherCardDetails> = [];
 
   constructor(private router: Router, private route: ActivatedRoute, private weatherDetailsService: WeatherDetailsService) {
   }
 
   public handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
+    console.log(weatherDetails);
     this.weatherDetailsService.selectedCityLocation.next(weatherDetails?.coord);
   }
 }
