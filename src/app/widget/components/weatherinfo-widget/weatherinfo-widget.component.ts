@@ -10,12 +10,13 @@ import {WeatherDetailsService} from '../../services/weather-details.service';
 })
 export class WeatherinfoWidgetComponent {
   @Input() parsedWeatherDetails: Array<ParsedWeatherCardDetails> = [];
+  public showHourlyDetails = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private weatherDetailsService: WeatherDetailsService) {
   }
 
   public handleClickEvent(weatherDetails: ParsedWeatherCardDetails | undefined): void {
-    console.log(weatherDetails);
+    this.showHourlyDetails = true;
     this.weatherDetailsService.selectedCityLocation.next(weatherDetails?.coord);
   }
 }

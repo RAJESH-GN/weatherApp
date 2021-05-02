@@ -55,8 +55,11 @@
       }
     }
   }
-
   .mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover{
     background: none !important;
+  }
+  .hourly-details-container{
+    max-height: 25rem;
+    overflow-y: scroll;
   }
 }

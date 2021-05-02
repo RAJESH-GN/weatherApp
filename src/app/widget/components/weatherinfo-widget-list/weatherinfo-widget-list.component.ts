@@ -27,7 +27,6 @@ export class WeatherinfoWidgetListComponent implements OnInit, OnDestroy {
         });
       });
     });
-    this.weatherDetailsService.selectedCityLocation.subscribe(res => console.log(res));
   }
 
   ngOnDestroy(): void {

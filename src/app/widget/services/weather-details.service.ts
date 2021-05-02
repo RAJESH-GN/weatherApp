@@ -8,7 +8,7 @@ import {WeatherHourlyResponse} from '../models/weatherHourlyResponse';
   providedIn: 'root'
 })
 export class WeatherDetailsService {
-  selectedCityLocation = new BehaviorSubject<Coord | undefined>(undefined);
+  public selectedCityLocation = new BehaviorSubject<Coord | undefined>(undefined);
   constructor(private http: HttpClient) {
   }
 

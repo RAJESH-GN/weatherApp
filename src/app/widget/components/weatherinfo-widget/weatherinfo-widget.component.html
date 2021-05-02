@@ -14,15 +14,19 @@
 </mat-card>-->
 
 <mat-accordion *ngIf="parsedWeatherDetails">
-  <mat-expansion-panel hideToggle class="weather-card" [id]="i" *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;" (opened)="handleClickEvent(parsedWeatherDetail)">
+  <mat-expansion-panel hideToggle class="weather-card" [id]="i"
+                       *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;"
+                       (opened)="handleClickEvent(parsedWeatherDetail)">
     <mat-expansion-panel-header class="weather-card__header">
       <mat-panel-title class="title">
         <h2>{{parsedWeatherDetail.city}},{{parsedWeatherDetail.country}}</h2>
         <div class="temperature-details">
           <p> As of {{parsedWeatherDetail.date | timeWithDate}}</p>
-          <p class="temperature-details__actual-temperature">{{parsedWeatherDetail.main.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
+          <p
+            class="temperature-details__actual-temperature">{{parsedWeatherDetail.main.temp | number: '1.0-0' | temperature: 'Celsius'}}</p>
           <h2>{{parsedWeatherDetail.type}}</h2>
-          <span class="wind-info"><i class="fas fa-1x fa-wind"></i> <span class="wind-info__speed">{{parsedWeatherDetail.windSpeed | measurementType: 'm/s'}}</span></span>
+          <span class="wind-info"><i class="fas fa-1x fa-wind"></i> <span
+            class="wind-info__speed">{{parsedWeatherDetail.windSpeed | measurementType: 'm/s'}}</span></span>
         </div>
       </mat-panel-title>
       <mat-panel-description class="description">
@@ -38,6 +42,11 @@
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <app-weatherinfo-details></app-weatherinfo-details>
+    <ng-template matExpansionPanelContent>
+      <div class="hourly-details-container">
+        <app-weatherinfo-details></app-weatherinfo-details>
+      </div>
+    </ng-template>
+
   </mat-expansion-panel>
 </mat-accordion>
