@@ -1,19 +1,20 @@
-/*
-mat-expansion-panel{
-  background-color: rgba(66, 66, 66, 0.74);
-  mat-panel-title, mat-panel-description{
-    color: white;
-    font-size: 1.4rem;
-  }
-  mat-panel-description{
-    display: flex;
-    justify-content: space-between;
-  }
-}
-*/
-.weather-hourly-details{
+.weather-hourly{
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
+  background-color: rgba(66,66,66,0.74);
   color: white;
+  &__time,&__temperature,&__wind-info,&__temp-type{
+    flex-basis: 25%;
+  }
+  &__wind-info{
+    display: flex;
+    align-items: center;
+    span{
+      margin-left: 1rem;
+    }
+  }
+  &__temp-type{
+    text-align: end;
+  }
 }

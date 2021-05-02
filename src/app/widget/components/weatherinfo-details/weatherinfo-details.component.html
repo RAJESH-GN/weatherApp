@@ -1,5 +1,6 @@
-<div class="weather-hourly-details" *ngFor="let hourWeather of hourlyWeather">
-  <span>{{hourWeather.dt | timeWithDate}}</span>
-  <span>{{hourWeather.temp | temperature}}</span>
-  <span>{{hourWeather.wind_speed | measurementType: 'm/s'}}</span>
-</div>
+<mat-card class="weather-hourly"  *ngFor="let hourWeather of hourlyWeather">
+  <p class="weather-hourly__time">{{hourWeather.dt | timeWithDate}}</p>
+  <p class="weather-hourly__temperature">{{hourWeather.temp | temperature}}</p>
+  <p class="weather-hourly__wind-info"><i class="fas fa-1x fa-wind"></i><span>{{hourWeather.wind_speed | measurementType: 'm/s'}}</span></p>
+  <p class="weather-hourly__temp-type"><i [class]="hourWeather.weather[0].main | cloudType: 'fa-2x'"></i></p>
+</mat-card>

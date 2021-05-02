@@ -13,8 +13,8 @@
   </div>
 </mat-card>-->
 
-<mat-accordion *ngIf="parsedWeatherDetails" multi>
-  <mat-expansion-panel hideToggle class="weather-card" *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;" (opened)="handleClickEvent(parsedWeatherDetail)">
+<mat-accordion *ngIf="parsedWeatherDetails" [multi]="true">
+  <mat-expansion-panel hideToggle class="weather-card" [id]="i" *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;" (opened)="handleClickEvent(parsedWeatherDetail)">
     <mat-expansion-panel-header class="weather-card__header">
       <mat-panel-title class="title">
         <h2>{{parsedWeatherDetail.city}},{{parsedWeatherDetail.country}}</h2>
