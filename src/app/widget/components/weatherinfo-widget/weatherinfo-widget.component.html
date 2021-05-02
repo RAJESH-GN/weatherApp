@@ -16,7 +16,8 @@
 <mat-accordion *ngIf="parsedWeatherDetails">
   <mat-expansion-panel hideToggle class="weather-card" [id]="i"
                        *ngFor="let parsedWeatherDetail of parsedWeatherDetails; let i = index;"
-                       (opened)="handleClickEvent(parsedWeatherDetail)">
+                       [expanded]="step === i"
+                       (opened)="handleClickEvent(parsedWeatherDetail); setStep(i)">
     <mat-expansion-panel-header class="weather-card__header">
       <mat-panel-title class="title">
         <h2>{{parsedWeatherDetail.city}},{{parsedWeatherDetail.country}}</h2>
@@ -47,6 +48,8 @@
         <app-weatherinfo-details></app-weatherinfo-details>
       </div>
     </ng-template>
-
+    <mat-action-row>
+      <button mat-raised-button color="accent" (click)="nextStep()">Next</button>
+    </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
