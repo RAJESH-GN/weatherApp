@@ -1,18 +1,18 @@
-.weather-app{
+.weather-app {
   background-image: url('../assets/weather.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  &__toolbar{
-    &__details{
+  &__toolbar {
+    &__details {
       display: flex;
       align-items: center;
       font-size: 2rem;
-      img{
+      img {
         width: 6rem;
       }
     }
   }
   mat-toolbar-row {
-    justify-content: center ;
+    justify-content: center;
   }
 }

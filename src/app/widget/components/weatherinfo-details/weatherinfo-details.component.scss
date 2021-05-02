@@ -1,20 +1,23 @@
-.weather-hourly{
+.weather-hourly {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
-  background-color: rgba(66,66,66,0.74);
+  background-color: var(--grey-bg);
   color: white;
-  &__time,&__temperature,&__wind-info,&__temp-type{
+  &__time,
+  &__temperature,
+  &__wind-info,
+  &__temp-type {
     flex-basis: 25%;
   }
-  &__wind-info{
+  &__wind-info {
     display: flex;
     align-items: center;
-    span{
+    span {
       margin-left: 1rem;
     }
   }
-  &__temp-type{
+  &__temp-type {
     text-align: end;
   }
 }

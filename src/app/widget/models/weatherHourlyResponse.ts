@@ -1,4 +1,4 @@
-import {Weather} from './weatherApiResponse';
+import { Weather } from './weatherApiResponse';
 
 export interface Hourly {
   dt: number;
@@ -24,4 +24,3 @@ export interface WeatherHourlyResponse {
   timezone_offset: number;
   hourly: Hourly[];
 }
-

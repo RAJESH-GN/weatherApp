@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/typography';
 
 *,
 *::before,
@@ -16,16 +17,16 @@ html {
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
 }
 
-.mat-h2, .mat-title, .mat-typography h2{
-  margin: 0;
+:root {
+  --grey-bg: rgba(66, 66, 66, 0.74);
 }

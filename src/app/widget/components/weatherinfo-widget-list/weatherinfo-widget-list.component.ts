@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {CityName, WeatherApiResponse} from '../../models/weatherApiResponse';
-import {WeatherDetailsService} from '../../services/weather-details.service';
+import { Component, OnInit } from '@angular/core';
+import { CityName, WeatherApiResponse } from '../../models/weatherApiResponse';
+import { WeatherDetailsService } from '../../services/weather-details.service';
 
 @Component({
   selector: 'app-weatherinfo-widget-list',
   templateUrl: './weatherinfo-widget-list.component.html',
-  styleUrls: ['./weatherinfo-widget-list.component.scss']
+  styleUrls: ['./weatherinfo-widget-list.component.scss'],
 })
 export class WeatherinfoWidgetListComponent implements OnInit {
   public parsedWeatherDetails: WeatherApiResponse[] = [];
@@ -17,11 +17,14 @@ export class WeatherinfoWidgetListComponent implements OnInit {
   }
 
   private getWeatherDetails(): void {
-    ['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Spain'].forEach((city: CityName) => {
-      this.weatherDetailsService.getWeatherInfoWithCity(city)
-        .subscribe((response: WeatherApiResponse) => {
-          this.parsedWeatherDetails.push(response);
-        });
-    });
+    ['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Spain'].forEach(
+      (city: CityName) => {
+        this.weatherDetailsService
+          .getWeatherInfoWithCity(city)
+          .subscribe((response: WeatherApiResponse) => {
+            this.parsedWeatherDetails.push(response);
+          });
+      }
+    );
   }
 }
