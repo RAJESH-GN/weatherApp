@@ -6,7 +6,7 @@
     {{ hourWeather.dt * 1000 | date: 'HH:mm a, dd-MMM' }}
   </p>
   <p class="weather-hourly__temperature">
-    {{ hourWeather.temp | temperature }}
+    {{ hourWeather.temp| number: '1.0-0' | temperature }}
   </p>
   <p class="weather-hourly__wind-info">
     <mat-icon>air</mat-icon><span>{{ hourWeather.wind_speed }} m/s</span>
