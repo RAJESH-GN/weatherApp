@@ -7,5 +7,5 @@ import { WeatherApiResponse } from '../../../models/weather-api-response';
   styleUrls: ['./expansion-description.component.scss'],
 })
 export class ExpansionDescriptionComponent {
-  @Input() parsedWeatherDetail: WeatherApiResponse;
+  @Input() public parsedWeatherDetail: WeatherApiResponse;
 }

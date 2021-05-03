@@ -30,7 +30,7 @@ describe('WeatherinfoWidgetListComponent', () => {
   });
 
   it('should load the weather Details for 5 cities', () => {
-    const weatherDetailsService = TestBed.get(WeatherDetailsService);
+    const weatherDetailsService = TestBed.inject(WeatherDetailsService);
     spyOn(weatherDetailsService, 'getWeatherInfoWithCity').and.returnValue(
       of(weatherApiMockResponse)
     );

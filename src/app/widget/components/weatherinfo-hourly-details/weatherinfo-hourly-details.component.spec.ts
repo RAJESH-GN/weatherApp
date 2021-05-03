@@ -29,7 +29,7 @@ describe('WeatherinfoHourlyDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should call the service to fetch the hourlyDetails', () => {
-    const weatherDetailsService = TestBed.get(WeatherDetailsService);
+    const weatherDetailsService = TestBed.inject(WeatherDetailsService);
     spyOn(weatherDetailsService, 'getHourlyInfoOfCity').and.returnValue(
       of(weatherApiHourlyResponse)
     );

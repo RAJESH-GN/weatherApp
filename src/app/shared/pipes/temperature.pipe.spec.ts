@@ -8,6 +8,6 @@ describe('TemperaturePipe', () => {
 
   it('should show temperature in degree celcius', () => {
     const pipe = new TemperaturePipe();
-    expect(pipe.transform(6)).toEqual('6°C');
+    expect(pipe.transform('6')).toEqual('6°C');
   });
 });

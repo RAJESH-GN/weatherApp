@@ -8,9 +8,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [HeaderComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,9 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('h1').innerHTML).toEqual(
+      'Weather Application'
+    );
+    expect(fixture.nativeElement.querySelector('img').innerHTML).toBeDefined();
   });
 });

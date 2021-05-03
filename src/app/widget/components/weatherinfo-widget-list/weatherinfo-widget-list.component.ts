@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CityName, WeatherApiResponse } from '../../models/weather-api-response';
+import {
+  CityName,
+  WeatherApiResponse,
+} from '../../models/weather-api-response';
 import { WeatherDetailsService } from '../../services/weather-details.service';
 
 @Component({
@@ -12,10 +15,16 @@ export class WeatherinfoWidgetListComponent implements OnInit {
 
   constructor(private weatherDetailsService: WeatherDetailsService) {}
 
+  /**
+   *  To get the details on load of the component calling getWeatherDetails
+   */
   ngOnInit(): void {
     this.getWeatherDetails();
   }
 
+  /**
+   * Gets the weather information for the 5 cities and updates the view with the fetched details
+   */
   private getWeatherDetails(): void {
     ['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Spain'].forEach(
       (city: CityName) => {

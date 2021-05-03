@@ -57,7 +57,7 @@ describe('WeatherDetailsService', () => {
       name: 'Rotterdam',
       cod: 200,
     };
-    const http = TestBed.get(HttpClient);
+    const http = TestBed.inject(HttpClient);
     spyOn(http, 'get').and.returnValue(of(weatherMockResponse));
     service.getWeatherInfoWithCity('Rotterdam').subscribe(response =>{
       expect(response).toEqual(weatherMockResponse);

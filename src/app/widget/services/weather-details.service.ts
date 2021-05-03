@@ -14,8 +14,8 @@ export class WeatherDetailsService {
   constructor(private http: HttpClient) {}
 
   /**
-   *
-   * @param city
+   * Gets the information from the WeatherAPI taking
+   * @param city cityName
    * @returns Observable<WeatherApiResponse>
    */
   public getWeatherInfoWithCity(
@@ -26,6 +26,12 @@ export class WeatherDetailsService {
     );
   }
 
+  /**
+   *  This method call the weatherApi to get the hourly details provided
+   * @param lat Latitude of the city
+   * @param lon Longitude of the City
+   * @returns Observable<WeatherHourlyResponse>
+   */
   public getHourlyInfoOfCity(
     lat: number,
     lon: number
