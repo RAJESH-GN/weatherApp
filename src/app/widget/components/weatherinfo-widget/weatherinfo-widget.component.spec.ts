@@ -26,6 +26,7 @@ describe('WeatherinfoWidgetComponent', () => {
     testHostFixture.detectChanges();
     component = fixture.componentInstance;
     fixture.detectChanges();
+    testHostFixture.detectChanges();
   });
 
   it('should create create a instance of the component', () => {

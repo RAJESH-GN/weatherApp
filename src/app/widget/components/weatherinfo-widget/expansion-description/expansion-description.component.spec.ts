@@ -30,10 +30,16 @@ describe('ExpansionDescriptionComponent', () => {
     fixture = TestBed.createComponent(ExpansionDescriptionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    testHostFixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show values to user once the component is loaded', () => {
+    expect(testHostFixture.nativeElement.querySelector('app-expansion-additional-info')).toBeDefined();
+    expect(testHostFixture.nativeElement.querySelector('app-expansion-average-temperature')).toBeDefined();
   });
 });
 

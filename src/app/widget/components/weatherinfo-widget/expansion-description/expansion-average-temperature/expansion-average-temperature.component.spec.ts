@@ -32,10 +32,16 @@ describe('ExpansionAverageTemperatureComponent', () => {
     fixture = TestBed.createComponent(ExpansionAverageTemperatureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    testHostFixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display values once the input received', () => {
+    expect(testHostFixture.nativeElement.querySelector('app-weather-icon')).toBeDefined();
+    expect(testHostFixture.nativeElement.querySelector('p').innerText).toContain(' 7°C / 4°C');
   });
 });
 

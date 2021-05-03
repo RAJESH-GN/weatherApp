@@ -29,10 +29,17 @@ describe('ExpansionTitleComponent', () => {
     fixture = TestBed.createComponent(ExpansionTitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    testHostFixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should load the details once the input is received', () => {
+    fixture.detectChanges();
+    expect(testHostFixture.nativeElement.querySelector('.temperature-details__actual-temperature').innerText).toEqual(' 6°C ');
+    expect(testHostFixture.nativeElement.querySelector('.temperature-details').innerText).toEqual('As of 04:29 AM 6°C Cloudsair4.12 m/s');
   });
 });
 

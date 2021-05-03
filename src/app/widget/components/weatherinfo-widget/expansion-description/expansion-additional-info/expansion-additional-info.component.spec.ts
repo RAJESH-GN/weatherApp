@@ -29,10 +29,15 @@ describe('ExpansionAdditionalInfoComponent', () => {
     fixture = TestBed.createComponent(ExpansionAdditionalInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    testHostFixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show values to the user once input received', () => {
+    expect(testHostFixture.nativeElement.querySelector('.additional-info p span').innerHTML).toEqual('3.13°C');
   });
 });
 
