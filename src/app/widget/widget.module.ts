@@ -11,9 +11,11 @@ import { WeatherDetailsService } from './services/weather-details.service';
 import { MaterialModule } from '../material/material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
+import { ExpansionTitleComponent } from './components/expansion-title/expansion-title.component';
+import { ExpansionDescriptionComponent } from './components/expansion-description/expansion-description.component';
 
 @NgModule({
-  declarations: [WeatherinfoWidgetComponent, routingComponents],
+  declarations: [WeatherinfoWidgetComponent, routingComponents, ExpansionTitleComponent, ExpansionDescriptionComponent],
   imports: [
     CommonModule,
     HttpClientModule,

@@ -9,62 +9,10 @@
   >
     <mat-expansion-panel-header class="weather-card__header">
       <mat-panel-title class="title">
-        <h2>
-          {{ parsedWeatherDetail.name }},{{ parsedWeatherDetail.sys.country }}
-        </h2>
-        <div class="temperature-details">
-          <p>As of {{ parsedWeatherDetail.dt * 1000 | date: 'HH:mm a' }}</p>
-          <p class="temperature-details__actual-temperature">
-            {{
-              parsedWeatherDetail.main.temp
-                | number: '1.0-0'
-                | temperature: 'Celsius'
-            }}
-          </p>
-          <h2>{{ parsedWeatherDetail.weather[0].main }}</h2>
-          <span class="wind-info"
-            ><mat-icon>air</mat-icon>
-            <span class="wind-info__speed"
-              >{{ parsedWeatherDetail.wind.speed }} m/s</span
-            ></span
-          >
-        </div>
+        <app-expansion-title [parsedWeatherDetail]="parsedWeatherDetail"></app-expansion-title>
       </mat-panel-title>
       <mat-panel-description class="description">
-        <div class="additional-info">
-          <p>
-            Feels Like :
-            <span>{{
-              parsedWeatherDetail.main.feels_like | temperature: 'celsius'
-            }}</span>
-          </p>
-          <p>
-            Pressure: <span>{{ parsedWeatherDetail.main.pressure }} hpa</span>
-          </p>
-          <p>
-            Clouds: <span>{{ parsedWeatherDetail.clouds.all }} %</span>
-          </p>
-        </div>
-        <div class="avg-temperature">
-          <app-weather-icon
-            [iconName]="parsedWeatherDetail.weather[0].icon"
-            [iconSize]="4"
-            imageSize="large"
-          ></app-weather-icon>
-          <p>
-            {{
-              parsedWeatherDetail.main.temp_max
-                | number: '1.0-0'
-                | temperature: 'Celsius'
-            }}
-            /
-            {{
-              parsedWeatherDetail.main.temp_min
-                | number: '1.0-0'
-                | temperature: 'Celsius'
-            }}
-          </p>
-        </div>
+        <app-expansion-description [parsedWeatherDetail]="parsedWeatherDetail"></app-expansion-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <ng-template matExpansionPanelContent>
