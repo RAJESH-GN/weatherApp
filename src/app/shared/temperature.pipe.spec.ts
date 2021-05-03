@@ -5,4 +5,9 @@ describe('TemperaturePipe', () => {
     const pipe = new TemperaturePipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('should show temperature in degree celcius', () => {
+    const pipe = new TemperaturePipe();
+    expect(pipe.transform(6)).toEqual('6°C');
+  });
 });

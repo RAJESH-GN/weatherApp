@@ -1,12 +1,10 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'temperature'
+  name: 'temperature',
 })
 export class TemperaturePipe implements PipeTransform {
-
-  transform(value: unknown, ...args: unknown[]): unknown {
+  transform(value: unknown, args?: string): string {
     return value + '°C';
   }
-
 }

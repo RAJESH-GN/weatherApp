@@ -22,7 +22,7 @@ export class WeatherinfoDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.hourlyWeather = this.weatherDetailsService
-      .getHourlyInfoOfCity(this.coord?.lat, this.coord.lon)
+      .getHourlyInfoOfCity(this.coord?.lat, this.coord?.lon)
       .pipe(pluck('hourly'));
   }
 }
