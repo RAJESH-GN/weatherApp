@@ -5,6 +5,8 @@ import { of } from 'rxjs';
 import { WeatherinfoWidgetListComponent } from './weatherinfo-widget-list.component';
 import { WeatherDetailsService } from '../../services/weather-details.service';
 import {weatherApiMockResponse} from '../../../shared/mocks/weather-api-mock-response';
+import {SharedModule} from '../../../shared/shared.module';
+import {MaterialModule} from '../../../material/material.module';
 
 describe('WeatherinfoWidgetListComponent', () => {
   let component: WeatherinfoWidgetListComponent;
@@ -12,7 +14,7 @@ describe('WeatherinfoWidgetListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientModule],
+      imports: [HttpClientModule, MaterialModule, SharedModule],
       declarations: [WeatherinfoWidgetListComponent],
       providers: [WeatherDetailsService],
     }).compileComponents();

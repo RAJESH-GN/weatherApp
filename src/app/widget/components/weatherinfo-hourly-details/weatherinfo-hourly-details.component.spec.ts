@@ -2,26 +2,26 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {HttpClientModule} from '@angular/common/http';
 import {of} from 'rxjs';
 
-import {WeatherinfoDetailsComponent} from './weatherinfo-details.component';
+import {WeatherinfoHourlyDetailsComponent} from './weatherinfo-hourly-details.component';
 import {WeatherDetailsService} from '../../services/weather-details.service';
 import {MaterialModule} from '../../../material/material.module';
 import {SharedModule} from '../../../shared/shared.module';
 import {weatherApiHourlyResponse} from '../../../shared/mocks/weather-api-hourly-response';
 
-describe('WeatherinfoDetailsComponent', () => {
-  let component: WeatherinfoDetailsComponent;
-  let fixture: ComponentFixture<WeatherinfoDetailsComponent>;
+describe('WeatherinfoHourlyDetailsComponent', () => {
+  let component: WeatherinfoHourlyDetailsComponent;
+  let fixture: ComponentFixture<WeatherinfoHourlyDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MaterialModule, SharedModule, HttpClientModule],
-      declarations: [WeatherinfoDetailsComponent],
+      declarations: [WeatherinfoHourlyDetailsComponent],
       providers: [WeatherDetailsService],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WeatherinfoDetailsComponent);
+    fixture = TestBed.createComponent(WeatherinfoHourlyDetailsComponent);
     component = fixture.componentInstance;
   });
 

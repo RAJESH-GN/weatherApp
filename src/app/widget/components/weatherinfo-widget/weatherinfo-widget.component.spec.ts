@@ -1,13 +1,12 @@
-import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {WeatherinfoWidgetComponent} from './weatherinfo-widget.component';
 import {Component} from '@angular/core';
-import {WeatherApiResponse} from '../../models/weatherApiResponse';
 import {SharedModule} from '../../../shared/shared.module';
 import {MaterialModule} from '../../../material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {By} from '@angular/platform-browser';
 import {weatherApiMockResponse} from '../../../shared/mocks/weather-api-mock-response';
+import {WeatherApiResponse} from '../../models/weather-api-response';
 
 describe('WeatherinfoWidgetComponent', () => {
   let component: WeatherinfoWidgetComponent;
@@ -17,7 +16,7 @@ describe('WeatherinfoWidgetComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SharedModule, MaterialModule, BrowserAnimationsModule],
-      declarations: [WeatherinfoWidgetComponent, TestHostComponent],
+      declarations: [WeatherinfoWidgetComponent, TestHostComponent, ],
     }).compileComponents();
   });
 
