@@ -1,37 +1,7 @@
 <div class="description-container">
-  <div class="additional-info">
-    <p>
-      Feels Like :
-      <span>{{
-        parsedWeatherDetail.main.feels_like | temperature: 'celsius'
-        }}</span>
-    </p>
-    <p>
-      Pressure: <span>{{ parsedWeatherDetail.main.pressure }} hpa</span>
-    </p>
-    <p>
-      Clouds: <span>{{ parsedWeatherDetail.clouds.all }} %</span>
-    </p>
-  </div>
+  <app-expansion-additional-info [parsedWeatherDetail]="parsedWeatherDetail"></app-expansion-additional-info>
   <div class="avg-temperature">
-    <app-weather-icon
-      [iconName]="parsedWeatherDetail.weather[0].icon"
-      [iconSize]="4"
-      imageSize="large"
-    ></app-weather-icon>
-    <p>
-      {{
-      parsedWeatherDetail.main.temp_max
-        | number: '1.0-0'
-        | temperature: 'Celsius'
-      }}
-      /
-      {{
-      parsedWeatherDetail.main.temp_min
-        | number: '1.0-0'
-        | temperature: 'Celsius'
-      }}
-    </p>
+   <app-expansion-average-temperature [parsedWeatherDetail]="parsedWeatherDetail"></app-expansion-average-temperature>
   </div>
 </div>
 
