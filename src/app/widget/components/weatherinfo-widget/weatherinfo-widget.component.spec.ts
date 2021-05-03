@@ -7,6 +7,7 @@ import {SharedModule} from '../../../shared/shared.module';
 import {MaterialModule} from '../../../material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {By} from '@angular/platform-browser';
+import {weatherApiMockResponse} from '../../../shared/mocks/weather-api-mock-response';
 
 describe('WeatherinfoWidgetComponent', () => {
   let component: WeatherinfoWidgetComponent;
@@ -37,7 +38,7 @@ describe('WeatherinfoWidgetComponent', () => {
       testHostFixture.nativeElement.querySelector('mat-panel-title')
     ).toBeDefined();
   });
-  it('should open or load the houly details component for first item ', () => {
+  it('should open or load the hourly details component for first item ', () => {
     const nativeElement: HTMLElement = testHostFixture.nativeElement;
     expect(
       nativeElement.querySelector('app-weatherinfo-details')
@@ -59,75 +60,6 @@ describe('WeatherinfoWidgetComponent', () => {
 })
 class TestHostComponent {
   public parsedWeatherDetails: WeatherApiResponse[] = [
-    {
-      coord: {lon: 4.4792, lat: 51.9225},
-      weather: [
-        {
-          id: 804,
-          main: 'Clouds',
-          description: 'overcast clouds',
-          icon: '04n',
-        },
-      ],
-      base: 'stations',
-      main: {
-        temp: 6.09,
-        feels_like: 3.13,
-        temp_min: 4.44,
-        temp_max: 7.22,
-        pressure: 1020,
-        humidity: 81,
-      },
-      visibility: 10000,
-      wind: {speed: 4.12, deg: 210},
-      clouds: {all: 100},
-      dt: 1620008971,
-      sys: {
-        type: 1,
-        id: 1541,
-        country: 'NL',
-        sunrise: 1620014914,
-        sunset: 1620068952,
-      },
-      timezone: 7200,
-      id: 2747891,
-      name: 'Rotterdam',
-      cod: 200,
-    },
-    {
-      coord: {lon: 4.4792, lat: 51.9225},
-      weather: [
-        {
-          id: 804,
-          main: 'Clouds',
-          description: 'overcast clouds',
-          icon: '04n',
-        },
-      ],
-      base: 'stations',
-      main: {
-        temp: 6.09,
-        feels_like: 3.13,
-        temp_min: 4.44,
-        temp_max: 7.22,
-        pressure: 1020,
-        humidity: 81,
-      },
-      visibility: 10000,
-      wind: {speed: 4.12, deg: 210},
-      clouds: {all: 100},
-      dt: 1620008971,
-      sys: {
-        type: 1,
-        id: 1541,
-        country: 'NL',
-        sunrise: 1620014914,
-        sunset: 1620068952,
-      },
-      timezone: 7200,
-      id: 2747891,
-      name: 'Amsterdam',
-      cod: 200,
-    },
+    weatherApiMockResponse
   ];
 }

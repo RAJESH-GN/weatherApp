@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
-import {TemperaturePipe} from './temperature.pipe';
+
+import {TemperaturePipe} from './pipes/temperature.pipe';
 import {WeatherIconComponent} from './components/weather-icon/weather-icon.component';
 
 const components = [TemperaturePipe,

@@ -1,4 +1,4 @@
-import { Weather } from './weatherApiResponse';
+import { Weather } from './weather-api-response';
 
 export interface Hourly {
   dt: number;

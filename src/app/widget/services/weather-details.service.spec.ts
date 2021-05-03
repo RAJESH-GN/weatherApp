@@ -2,9 +2,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
 import { WeatherDetailsService } from './weather-details.service';
-import {WeatherApiResponse} from '../models/weatherApiResponse';
+import {WeatherApiResponse} from '../models/weather-api-response';
 import {of} from 'rxjs';
-import {WeatherHourlyResponse} from '../models/weatherHourlyResponse';
+import {WeatherHourlyResponse} from '../models/weather-hourly-response';
 
 describe('WeatherDetailsService', () => {
   let service: WeatherDetailsService;

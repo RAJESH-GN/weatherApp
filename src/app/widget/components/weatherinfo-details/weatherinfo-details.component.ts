@@ -1,13 +1,10 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WeatherDetailsService } from '../../services/weather-details.service';
-import { Coord } from '../../models/weatherApiResponse';
 import { Observable, Subject, Subscription } from 'rxjs';
-import {
-  Hourly,
-  WeatherHourlyResponse,
-} from '../../models/weatherHourlyResponse';
 import { map, pluck } from 'rxjs/operators';
+import {Coord} from '../../models/weather-api-response';
+import {Hourly} from '../../models/weather-hourly-response';
 
 @Component({
   selector: 'app-weatherinfo-details',

@@ -4,9 +4,9 @@ import {
   CityName,
   Coord,
   WeatherApiResponse,
-} from '../models/weatherApiResponse';
+} from '../models/weather-api-response';
 import { HttpClient } from '@angular/common/http';
-import { WeatherHourlyResponse } from '../models/weatherHourlyResponse';
+import { WeatherHourlyResponse } from '../models/weather-hourly-response';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
