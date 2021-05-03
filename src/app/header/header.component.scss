@@ -1,0 +1,13 @@
+.toolbar {
+  &__details {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    img {
+      width: 6rem;
+    }
+  }
+}
+mat-toolbar-row {
+  justify-content: center;
+}
