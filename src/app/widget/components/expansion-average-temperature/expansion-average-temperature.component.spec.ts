@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExpansionAverageTemperatureComponent } from './expansion-average-temperature.component';
+import {TemperaturePipe} from '../../../shared/temperature.pipe';
 
 describe('ExpansionAverageTemperatureComponent', () => {
   let component: ExpansionAverageTemperatureComponent;
@@ -8,7 +9,7 @@ describe('ExpansionAverageTemperatureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExpansionAverageTemperatureComponent ]
+      declarations: [ ExpansionAverageTemperatureComponent, TemperaturePipe ]
     })
     .compileComponents();
   });

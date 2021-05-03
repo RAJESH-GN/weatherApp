@@ -73,7 +73,7 @@ describe('WeatherinfoDetailsComponent', () => {
       ).toEqual(' 06:00 AM, 03-May ');
       expect(
         nativeElement.querySelector('.weather-hourly__temperature').innerHTML
-      ).toEqual(' 6.42°C ');
+      ).toEqual(' 6°C ');
     });
   });
 });

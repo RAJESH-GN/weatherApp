@@ -2,13 +2,13 @@
   <p>
     Feels Like :
     <span>{{
-      parsedWeatherDetail.main.feels_like | temperature: 'celsius'
+      parsedWeatherDetail?.main.feels_like | temperature: 'celsius'
       }}</span>
   </p>
   <p>
-    Pressure: <span>{{ parsedWeatherDetail.main.pressure }} hpa</span>
+    Pressure: <span>{{ parsedWeatherDetail?.main.pressure }} hpa</span>
   </p>
   <p>
-    Clouds: <span>{{ parsedWeatherDetail.clouds.all }} %</span>
+    Clouds: <span>{{ parsedWeatherDetail?.clouds.all }} %</span>
   </p>
 </div>

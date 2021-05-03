@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExpansionAdditionalInfoComponent } from './expansion-additional-info.component';
+import {TemperaturePipe} from '../../../shared/temperature.pipe';
 
 describe('ExpansionAdditionalInfoComponent', () => {
   let component: ExpansionAdditionalInfoComponent;
@@ -8,7 +9,7 @@ describe('ExpansionAdditionalInfoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExpansionAdditionalInfoComponent ]
+      declarations: [ ExpansionAdditionalInfoComponent, TemperaturePipe ]
     })
     .compileComponents();
   });
