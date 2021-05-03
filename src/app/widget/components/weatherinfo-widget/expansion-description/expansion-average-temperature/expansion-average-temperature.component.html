@@ -1,0 +1,18 @@
+<app-weather-icon
+  [iconName]="parsedWeatherDetail?.weather[0].icon"
+  [iconSize]="4"
+  imageSize="large"
+></app-weather-icon>
+<p>
+  {{
+  parsedWeatherDetail?.main.temp_max
+    | number: '1.0-0'
+    | temperature: 'Celsius'
+  }}
+  /
+  {{
+  parsedWeatherDetail?.main.temp_min
+    | number: '1.0-0'
+    | temperature: 'Celsius'
+  }}
+</p>

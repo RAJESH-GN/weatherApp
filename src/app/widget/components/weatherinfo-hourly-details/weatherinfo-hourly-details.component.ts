@@ -7,11 +7,11 @@ import {Coord} from '../../models/weather-api-response';
 import {Hourly} from '../../models/weather-hourly-response';
 
 @Component({
-  selector: 'app-weatherinfo-details',
-  templateUrl: './weatherinfo-details.component.html',
-  styleUrls: ['./weatherinfo-details.component.scss'],
+  selector: 'app-weatherinfo-hourly-details',
+  templateUrl: './weatherinfo-hourly-details.component.html',
+  styleUrls: ['./weatherinfo-hourly-details.component.scss'],
 })
-export class WeatherinfoDetailsComponent implements OnInit {
+export class WeatherinfoHourlyDetailsComponent implements OnInit {
   @Input() coord: Coord;
   public hourlyWeather: Observable<Hourly[]>;
 
