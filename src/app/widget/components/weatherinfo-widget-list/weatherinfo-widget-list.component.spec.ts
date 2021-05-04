@@ -6,7 +6,7 @@ import { WeatherinfoWidgetListComponent } from './weatherinfo-widget-list.compon
 import { WeatherDetailsService } from '../../services/weather-details.service';
 import { weatherApiMockResponse } from '../../../shared/mocks/weather-api-mock-response';
 import { SharedModule } from '../../../shared/shared.module';
-import { MaterialModule } from '../../../material/material.module';
+import { MaterialModule } from '../../../shared/material/material.module';
 
 describe('WeatherinfoWidgetListComponent', () => {
   let component: WeatherinfoWidgetListComponent;

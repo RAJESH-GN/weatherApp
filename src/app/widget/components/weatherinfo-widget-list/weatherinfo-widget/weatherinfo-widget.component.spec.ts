@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WeatherinfoWidgetComponent } from './weatherinfo-widget.component';
 import { Component } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared.module';
-import { MaterialModule } from '../../../../material/material.module';
+import { MaterialModule } from '../../../../shared/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WeatherApiResponse } from '../../../models/weather-api-response';
 import { weatherApiMockResponse } from '../../../../shared/mocks/weather-api-mock-response';

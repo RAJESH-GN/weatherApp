@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { ExpansionDescriptionComponent } from './expansion-description.component';
 import { ExpansionAverageTemperatureComponent } from './expansion-average-temperature/expansion-average-temperature.component';
 import { ExpansionAdditionalInfoComponent } from './expansion-additional-info/expansion-additional-info.component';
-import { MaterialModule } from '../../../../../material/material.module';
+import { MaterialModule } from '../../../../../shared/material/material.module';
 import { SharedModule } from '../../../../../shared/shared.module';
 import { WeatherApiResponse } from '../../../../models/weather-api-response';
 import { weatherApiMockResponse } from '../../../../../shared/mocks/weather-api-mock-response';

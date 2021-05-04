@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 
 import { ExpansionAverageTemperatureComponent } from './expansion-average-temperature.component';
-import { MaterialModule } from '../../../../../../material/material.module';
+import { MaterialModule } from '../../../../../../shared/material/material.module';
 import { SharedModule } from '../../../../../../shared/shared.module';
 import { TemperaturePipe } from '../../../../../../shared/pipes/temperature.pipe';
 import { WeatherIconComponent } from '../../../../../../shared/components/weather-icon/weather-icon.component';

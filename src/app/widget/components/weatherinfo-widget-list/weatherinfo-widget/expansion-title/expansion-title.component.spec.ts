@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
 
 import { ExpansionTitleComponent } from './expansion-title.component';
-import { MaterialModule } from '../../../../../material/material.module';
+import { MaterialModule } from '../../../../../shared/material/material.module';
 import { SharedModule } from '../../../../../shared/shared.module';
 import { TemperaturePipe } from '../../../../../shared/pipes/temperature.pipe';
 import { WeatherApiResponse } from '../../../../models/weather-api-response';

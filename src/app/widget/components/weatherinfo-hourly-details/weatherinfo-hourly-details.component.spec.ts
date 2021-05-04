@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 
 import { WeatherinfoHourlyDetailsComponent } from './weatherinfo-hourly-details.component';
 import { WeatherDetailsService } from '../../services/weather-details.service';
-import { MaterialModule } from '../../../material/material.module';
+import { MaterialModule } from '../../../shared/material/material.module';
 import { SharedModule } from '../../../shared/shared.module';
 import { weatherApiHourlyResponse } from '../../../shared/mocks/weather-api-hourly-response';
 
