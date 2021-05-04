@@ -117,6 +117,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Screenshots:
+
+- of UnitTestCoverage and the application built is attached in the Folder at root
+
 ## Built With ❤️ and
 
 - [Angular](https://angular.io)
@@ -134,4 +138,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Author
 
-- Naga Rajesh
+- Naga Rajesh Gaddale
