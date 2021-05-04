@@ -42,6 +42,11 @@ export class WeatherDetailsService {
       .pipe(catchError(this.handleError));
   }
 
+  /**
+   * Generic error handler for http calls
+   * @param error gets info abl=out what happened with the http request
+   * @returns Error object
+   */
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Can be routed to a page which gives info to user.
