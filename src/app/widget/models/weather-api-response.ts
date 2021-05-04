@@ -52,9 +52,4 @@ export interface WeatherApiResponse {
   cod: number;
 }
 
-export type CityName =
-  | 'Amsterdam'
-  | 'Rotterdam'
-  | 'Berlin'
-  | 'Spain'
-  | 'London';
+export type CityName = 'Amsterdam' | 'Paris' | 'Berlin' | 'Madrid' | 'London';

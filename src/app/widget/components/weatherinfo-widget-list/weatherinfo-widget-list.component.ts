@@ -26,7 +26,7 @@ export class WeatherinfoWidgetListComponent implements OnInit {
    * Gets the weather information for the 5 cities and updates the view with the fetched details
    */
   private getWeatherDetails(): void {
-    ['Amsterdam', 'Rotterdam', 'Berlin', 'London', 'Spain'].forEach(
+    ['Amsterdam', 'Paris', 'Berlin', 'London', 'Madrid'].forEach(
       (city: CityName) => {
         this.weatherDetailsService
           .getWeatherInfoWithCity(city)
