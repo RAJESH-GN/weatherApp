@@ -1,4 +1,4 @@
-import {WeatherHourlyResponse} from '../../widget/models/weather-hourly-response';
+import { WeatherHourlyResponse } from '../../widget/models/weather-hourly-response';
 
 export const weatherApiHourlyResponse: WeatherHourlyResponse = {
   lat: 52.374,
@@ -31,4 +31,3 @@ export const weatherApiHourlyResponse: WeatherHourlyResponse = {
     },
   ],
 };
-

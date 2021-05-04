@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherIconComponent } from './weather-icon.component';
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 describe('WeatherIconComponent', () => {
   let component: WeatherIconComponent;
@@ -10,9 +10,8 @@ describe('WeatherIconComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WeatherIconComponent, TestHostComponent ]
-    })
-    .compileComponents();
+      declarations: [WeatherIconComponent, TestHostComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -33,8 +32,11 @@ describe('WeatherIconComponent', () => {
 
 @Component({
   selector: `app-host-component`,
-  template: `
-    <app-weather-icon imageSize="small" [iconName]="iconName" [iconSize]="iconSize"></app-weather-icon>`,
+  template: ` <app-weather-icon
+    imageSize="small"
+    [iconName]="iconName"
+    [iconSize]="iconSize"
+  ></app-weather-icon>`,
 })
 class TestHostComponent {
   iconName = 'clouds';

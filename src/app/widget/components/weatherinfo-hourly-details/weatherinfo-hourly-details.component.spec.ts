@@ -1,12 +1,12 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import {HttpClientModule} from '@angular/common/http';
-import {of} from 'rxjs';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { of } from 'rxjs';
 
-import {WeatherinfoHourlyDetailsComponent} from './weatherinfo-hourly-details.component';
-import {WeatherDetailsService} from '../../services/weather-details.service';
-import {MaterialModule} from '../../../material/material.module';
-import {SharedModule} from '../../../shared/shared.module';
-import {weatherApiHourlyResponse} from '../../../shared/mocks/weather-api-hourly-response';
+import { WeatherinfoHourlyDetailsComponent } from './weatherinfo-hourly-details.component';
+import { WeatherDetailsService } from '../../services/weather-details.service';
+import { MaterialModule } from '../../../material/material.module';
+import { SharedModule } from '../../../shared/shared.module';
+import { weatherApiHourlyResponse } from '../../../shared/mocks/weather-api-hourly-response';
 
 describe('WeatherinfoHourlyDetailsComponent', () => {
   let component: WeatherinfoHourlyDetailsComponent;

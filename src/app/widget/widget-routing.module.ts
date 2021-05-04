@@ -14,6 +14,5 @@ const routes: Routes = [
 export class WidgetRoutingModule {}
 
 export const routingComponents = [
-  WeatherinfoWidgetListComponent,
-  WeatherinfoHourlyDetailsComponent,
+  WeatherinfoWidgetListComponent
 ];
