@@ -54,12 +54,12 @@ describe('WeatherDetailsService', () => {
       },
       timezone: 7200,
       id: 2747891,
-      name: 'Rotterdam',
+      name: 'Madrid',
       cod: 200,
     };
     const http = TestBed.inject(HttpClient);
     spyOn(http, 'get').and.returnValue(of(weatherMockResponse));
-    service.getWeatherInfoWithCity('Rotterdam').subscribe(response =>{
+    service.getWeatherInfoWithCity('Madrid').subscribe(response => {
       expect(response).toEqual(weatherMockResponse);
     });
   });

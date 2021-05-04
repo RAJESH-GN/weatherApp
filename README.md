@@ -96,13 +96,18 @@ I have also implemented and used
 
 4.  **App Module**: App Module only holds the logic to show the header information assuming headers to be common for the whole app.
 
+If you have any questions feel free to contact me rajeshgn821@gmail.com.
+
+## Can be improved
+
+1. Error Handling with an error page to show something went wrong Try again later
+2. Check responsiveness of UI with Multiple Viewports and devices.
+3. E2E testing
+4. Error Handling
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -112,10 +117,21 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Built With ❤️ and
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- [Angular](https://angular.io)
+- [Angular Material](https://material.angular.io)
+- [Angular Flex layout](https://github.com/angular/flex-layout)
+- [Jasmin](https://jasmine.github.io/)
+- [Karma](https://karma-runner.github.io/latest/index.html)
+- [HTML](https://www.w3.org/html/)
+- [SCSS](https://sass-lang.com/)
+- [TypeScript](http://www.typescriptlang.org/)
 
-## Further help
+## Icons
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [FlatIcons] https://www.flaticon.com/
+
+## Author
+
+- Naga Rajesh
