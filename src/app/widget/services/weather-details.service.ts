@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import {
-  CityName,
-  Coord,
-  WeatherApiResponse,
-} from '../models/weather-api-response';
-import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { CityName, WeatherApiResponse } from '../models/weather-api-response';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { WeatherHourlyResponse } from '../models/weather-hourly-response';
 import { environment } from '../../../environments/environment';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class WeatherDetailsService {
@@ -21,9 +18,11 @@ export class WeatherDetailsService {
   public getWeatherInfoWithCity(
     city: CityName
   ): Observable<WeatherApiResponse> {
-    return this.http.get<WeatherApiResponse>(
-      `${environment.weather_api_base_url}weather?q=${city}&units=metric&appid=${environment.api_key}`
-    );
+    return this.http
+      .get<WeatherApiResponse>(
+        `${environment.weather_api_base_url}weather?q=${city}&units=metric&appid=${environment.api_key}`
+      )
+      .pipe(catchError(this.handleError));
   }
 
   /**
@@ -36,8 +35,25 @@ export class WeatherDetailsService {
     lat: number,
     lon: number
   ): Observable<WeatherHourlyResponse> {
-    return this.http.get<WeatherHourlyResponse>(
-      `${environment.weather_api_base_url}onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts&appid=${environment.api_key}`
-    );
+    return this.http
+      .get<WeatherHourlyResponse>(
+        `${environment.weather_api_base_url}onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts&appid=${environment.api_key}`
+      )
+      .pipe(catchError(this.handleError));
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      // A client-side or network error occurred. Can be routed to a page which gives info to user.
+      console.error('An error occurred:', error.error);
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong.
+      console.error(
+        `Backend returned code ${error.status}, ` + `body was: ${error.error}`
+      );
+    }
+    // Return an observable with a user-facing error message.
+    return throwError('Something bad happened; please try again later.');
   }
 }
