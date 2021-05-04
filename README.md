@@ -119,9 +119,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Screenshots:
 
-- of UnitTestCoverage and the application built is attached in the Folder at root
+- Added UnitTestCoverage for all the files in the project
+- Weather Application screenshot
 
-## Built With ❤️ and
+## Application deployed
+
+- on a Firebase server https://weatherapp-cb0f6.web.app
+
+## Built With ❤
 
 - [Angular](https://angular.io)
 - [Angular Material](https://material.angular.io)

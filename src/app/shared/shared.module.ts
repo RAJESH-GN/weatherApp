@@ -18,11 +18,4 @@ const components = [TemperaturePipe, WeatherIconComponent];
   ],
   exports: [...components],
 })
-export class SharedModule {
-  // tslint:disable-next-line:typedef
-  static forRoot() {
-    return {
-      ngModule: SharedModule,
-    };
-  }
-}
+export class SharedModule {}
