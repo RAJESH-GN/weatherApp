@@ -20,7 +20,7 @@ export class WeatherDetailsService {
   ): Observable<WeatherApiResponse> {
     return this.http
       .get<WeatherApiResponse>(
-        `${environment.weather_api_base_url}weather?q=${city}&units=metric&appid=${environment.api_key}`
+        `${environment.weather_api_base_url}weather?q=${city}&units=metric`
       )
       .pipe(catchError(this.handleError));
   }
@@ -37,7 +37,7 @@ export class WeatherDetailsService {
   ): Observable<WeatherHourlyResponse> {
     return this.http
       .get<WeatherHourlyResponse>(
-        `${environment.weather_api_base_url}onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts&appid=${environment.api_key}`
+        `${environment.weather_api_base_url}onecall?lat=${lat}&units=metric&lon=${lon}&exclude=daily,current,minutely,alerts`
       )
       .pipe(catchError(this.handleError));
   }
