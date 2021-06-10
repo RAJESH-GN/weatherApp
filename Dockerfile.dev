@@ -1,11 +1,11 @@
 FROM node:alpine
+RUN apk add chromium
+ENV CHROME_BIN='/usr/bin/chromium-browser'
+WORKDIR "/app"
 
-WORKDIR /usr/src/app/app-ui
-
-COPY ./package*.json ./
-RUN npm install -g @angular/cli @angular-devkit/build-angular && npm install --force
+COPY ./package.json ./
+RUN npm install --force
 
 COPY . .
-EXPOSE 4201
 
-CMD ["npm","start"]
+CMD ["npm","run","start"]
