@@ -1,0 +1,11 @@
+FROM node:alpine
+RUN apk add chromium
+ENV CHROME_BIN='/usr/bin/chromium-browser'
+WORKDIR "/app"
+
+COPY ./package.json ./
+RUN npm install --force
+
+COPY . .
+
+CMD ["npm","run","start"]
