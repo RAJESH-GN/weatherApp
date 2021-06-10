@@ -66,7 +66,7 @@ I have also implemented and used
 
     # Components:
 
-        |- weatherinfo-widget-list: holds all the names of the cities and fetches temperature info for those cities and passes it to weatherinfo-widget to show card.
+        |- weatherinfo-widget-list: holds all the names of the cities and fetches temperature info for those cities and passes it to weatherinfo-widget to show cards.
 
             |- weatherinfo-widget: holds the expansion panel which is shown to the user receives the data from the weatherinfo-widget-list component and shows the details to user.
 
