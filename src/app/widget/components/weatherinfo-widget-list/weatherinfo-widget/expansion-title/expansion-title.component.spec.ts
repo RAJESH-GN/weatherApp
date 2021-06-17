@@ -45,7 +45,7 @@ describe('ExpansionTitleComponent', () => {
     expect(
       testHostFixture.nativeElement.querySelector('.temperature-details')
         .innerText
-    ).toEqual('As of 02:29 AM 6°C Cloudsair4.12 m/s');
+    ).toEqual('As of 04:29 AM 6°C Cloudsair4.12 m/s');
   });
 });
 

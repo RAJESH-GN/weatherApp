@@ -39,7 +39,7 @@ describe('WeatherinfoHourlyDetailsComponent', () => {
       expect(hourlyWeather).toEqual(weatherApiHourlyResponse.hourly);
       expect(
         nativeElement.querySelector('.weather-hourly__time').innerHTML
-      ).toEqual(' 04:00 AM, 03-May ');
+      ).toEqual(' 06:00 AM, 03-May ');
       expect(
         nativeElement.querySelector('.weather-hourly__temperature').innerHTML
       ).toEqual(' 6°C ');
