@@ -7,7 +7,7 @@ node {
    }
    stage('test') {
      
-       sh ' docker build rajeshgn821/testbuild .'
+       sh ' docker build -t rajeshgn821/testbuild .'
 
    }
    stage('docker build/push') {
