@@ -6,9 +6,9 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     nodejs('nodejs') {
-       sh 'npm run test-headless'
-    }
+     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+       docker.build("rajeshgn821/testbuild", "-f Dockerfile.dev .")
+     }
 
    }
    stage('docker build/push') {
