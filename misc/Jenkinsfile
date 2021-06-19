@@ -6,7 +6,8 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     docker.build("rajeshgn821/weatherapp","-f Dockerfile.dev .")
+     sh 'docker build -f Dockerfile.dev . npm run test-headless'
+
    }
    stage('docker build/push') {
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
