@@ -6,8 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     
-       sh ' docker build -t rajeshgn821/testbuild .'
+       sh ' docker build -t rajeshgn821/testbuild ../'
 
    }
    stage('docker build/push') {
