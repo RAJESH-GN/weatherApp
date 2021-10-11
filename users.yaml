@@ -8,36 +8,3 @@ spec:
     email: jenny-doe@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
   memberOf: [team-b, employees]
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: rajesh
-spec:
-  profile:
-    displayName: rajesh Doe
-    email: rajesh@example.com
-    picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [team-b, employees]
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: janny
-spec:
-  profile:
-    displayName: Janny Janny
-    email: janny@example.com
-    picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [team-z, employees]
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: Rajeshgn
-spec:
-  profile:
-    displayName: Rajesh Doe
-    email: Peacks@example.com
-    picture: https://example.com/staff/jenny-with-party-hat.jpeg
-  memberOf: [team-R, employees]
