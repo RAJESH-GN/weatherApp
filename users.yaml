@@ -41,3 +41,14 @@ spec:
     email: Peacks@example.com
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
   memberOf: [team-R, employees]
+  ---
+  ---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: Errored Object
+spec:
+  profile:
+    displayName: Error Object
+    email: error@example.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
