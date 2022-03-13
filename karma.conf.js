@@ -8,6 +8,7 @@ module.exports = function (config) {
     plugins: [
       require("karma-jasmine"),
       require("karma-chrome-launcher"),
+      require("karma-phantomjs-launcher"),
       require("karma-jasmine-html-reporter"),
       require("karma-coverage"),
       require("@angular-devkit/build-angular/plugins/karma"),
@@ -34,7 +35,18 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ["Chrome"],
+    browsers: ["Chrome", "ChromeHeadless"],
+    customLaunchers: {
+      ChromeHeadless: {
+        base: "Chrome",
+        flags: [
+          "--headless",
+          "--disable-gpu",
+          "--no-sandbox",
+          "--remote-debugging-port=9222",
+        ],
+      },
+    },
     singleRun: true,
     restartOnFileChange: true,
   });
