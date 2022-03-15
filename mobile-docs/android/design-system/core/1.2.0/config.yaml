@@ -1,0 +1,5 @@
+- title: sample v2 yaml
+  version: 1.2.0
+  indexPath: /index.html
+  description: a new description1
+  category: design-system
